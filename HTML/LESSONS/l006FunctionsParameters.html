@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Functions</title>
+    <script>
+        //Infinities Parameters (spread)
+        function add(...n){
+            var resultado=0;
+            for(var i=0; i<n.length; i++){
+                resultado+=n[i];
+            }
+            return resultado;
+        }
+        //Sintax minimalist
+        var triple=n=>3*n;
+        var multiply2numbers=(n1,n2)=>n1*n2;
+        //Copy of the parameter
+        function addOne(n){
+            var copy=n;
+            copy++;
+            return copy;
+        }
+    </script>
+</head>
+<body>
+    <h1>Functions</h1>
+    <script>
+        document.write("<p>"+add(1,5,4,2,3,6,8,45,500,46,3,22,57,88,1,-9)+"</p>");
+        document.write("<p>"+triple(10)+"</p>");
+        document.write("<p>"+addOne(5)+"</p>");
+        document.write("<p>"+multiply2numbers(5,7)+"</p>");
+    </script>
+</body>
+</html>

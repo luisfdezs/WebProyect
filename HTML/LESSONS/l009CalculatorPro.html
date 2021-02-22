@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CalculatorPro</title>
+    <script>
+        function write(a){
+            document.getElementById("display").value+=a;
+        }
+        function write_separate_character(){
+            const text = new String(document.getElementById("display").value);
+            let permitted = true;
+            if(!text.length)    permitted=false;
+            for(let i=0; i<text.length; i++){
+                if(text.charAt(i)==','){
+                    permitted=false;
+                    i=text.length;
+                }
+            }
+            if(permitted){
+                document.getElementById("display").value+=',';
+            }
+        }
+        function write_operate_character(a){
+            const text = new String(document.getElementById("display").value);
+            const last_char = text.charAt(text.length - 1);
+            if(last_char=='+' || last_char=='-' || last_char=='*' || last_char=='/');
+            else{
+                document.getElementById("display").value+=a;
+            }
+        }
+        function write_digit(a){
+            if (isNaN(a)) {
+                switch (a){
+                    case ',':
+                        write_separate_character();
+                        break;
+                    case '(':
+                        write(a);
+                        break;
+                    case ')':
+                        write(a);
+                        break;
+                    default:
+                        write_operate_character(a);
+                        break;
+                }
+            }else{
+                write(a);
+            }
+        }
+        function clearScreen(){
+            document.getElementById("display").value="";
+        }
+        function calculateResult(){
+            alert("yeas");
+        }
+        function Delete(){
+            const old_text = new String(document.getElementById("display").value);
+            const new_text = old_text.substring(0, old_text.length - 1);
+            document.getElementById("display").value=new_text;
+        }
+    </script>
+</head>
+<body>
+<table width="15%" border="1">
+    <tr>
+        <td colspan="4" align="center">
+            <input id="display" type="text" size="25" value=""></td>
+    </tr>
+    <tr>
+        <td width="26%"><input type="button" value="+" onclick="write_digit('+');"></td>
+        <td width="21%"><input type="button" value="-" onclick="write_digit('-');"></td>
+        <td width="21%"><input type="button" value="*" onclick="write_digit('*');"></td>
+        <td width="32%"><input type="button" value="/" onclick="write_digit('/');"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="7" onclick="write_digit(7);"></td>
+        <td><input type="button" value="8" onclick="write_digit(8);"></td>
+        <td><input type="button" value="9" onclick="write_digit(9);"></td>
+        <td><input type="button" value="CE" onclick="clearScreen();"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="4" onclick="write_digit(4);"></td>
+        <td><input type="button" value="5" onclick="write_digit(5);"></td>
+        <td><input type="button" value="6" onclick="write_digit(6);"></td>
+        <td><input type="button" value="C" onclick="Delete();"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="1" onclick="write_digit(1);"></td>
+        <td><input type="button" value="2" onclick="write_digit(2);"></td>
+        <td><input type="button" value="3" onclick="write_digit(3);"></td>
+        <td><input type="button" value="(" onclick="write_digit('(');"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="0" onclick="write_digit(0);"></td>
+        <td><input type="button" value="," onclick="write_digit(',');"></td>
+        <td><input type="button" value="=" onclick="calculateResult();"></td>
+        <td><input type="button" value=")" onclick="write_digit(')');"></td>
+    </tr>
+</table>
+</body>
+</html>

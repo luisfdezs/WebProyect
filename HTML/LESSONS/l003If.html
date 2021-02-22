@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Conditionals</title>
+
+</head>
+<body>
+    <h1>If</h1>
+<script>
+    var calification = prompt("What was you calification in the exam??");
+    if (calification<0 || calification>10){
+        document.write("that's no possible");
+    }
+    else{
+        if (calification<5){
+            document.write("F");
+        }
+        else if (calification>=5 && calification<6){
+            document.write("Pass");
+        }
+        else if(calification>=6 && calification<7){
+            document.write("C");
+        }
+        else if (calification>=7 && calification<9){
+            document.write("B")
+        }
+        else{
+            document.write("Congratulations, you have an A!!!!");
+        }
+    }
+
+</script>
+</body>
+</html>

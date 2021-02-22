@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function (){
+            $("div img").hide();
+        });
+    </script>
+</head>
+<body>
+    <h1>DOM</h1>
+    <p>The dom <strong>(Model Object Model)</strong> is a model of the web. Its a model that knows the hierarchy
+    and contents (among others, lake attributes and others) of all the tags or labels of the page</p>
+    <br>
+    <p>The library <strong>JQuery</strong> implements, among others features, tools for handle the DOM</p>
+
+    <div>
+        <img src="../../Img/adidas.jpeg">
+        <img src="../../Img/beats.jpeg">
+        <img src="../../Img/bmw.jpeg">
+        <img src="../../Img/mini.jpeg">
+    </div>
+    <img src="../../Img/pepsi.jpeg">
+    <!--
+    <script>
+        const images = document.querySelectorAll("div img");
+        for(let i=0; i<images.length; i++){
+            images[i].style.visibility="hidden";
+        }
+    </script>
+    -->
+</body>
+</html>

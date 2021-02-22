@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <script>
+        var n1="",n2="",n3="",op="";
+        var add=(a,b)=>a-(-b);
+        var sus=(a,b)=>a-b;
+        var mul=(a,b)=>a*b;
+        var div=(a,b)=>a/b;
+        function converse(a){
+            if (isNaN(a)){
+                a="";
+                alert("Please, dont kinding");
+            }
+            else{
+                a=parseInt(a);
+            }
+        }
+    </script>
+</head>
+<body>
+    <script>
+        while(isNaN(parseInt(n1))){
+            n1=prompt("Give me one number");
+            converse(n1);
+        }
+        while(isNaN(parseInt(n2))){
+            n2=prompt("Give me other");
+            converse(n2);
+        }
+        while(op!="1" && op!="2" && op!="3" && op!="4"){
+            op=prompt("1.Add\n2.Subtrac\n3.Multiply\n4.Divide");
+            switch (op){
+                case "1":
+                    alert(add(n1,n2));
+                    break;
+                case "2":
+                    alert(sus(n1,n2));
+                    break;
+                case "3":
+                    alert(mul(n1,n2));
+                    break;
+                case "4":
+                    alert(div(n1,n2));
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>
